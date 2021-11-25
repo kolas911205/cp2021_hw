@@ -1,0 +1,213 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cp2021 homework site</title>
+        <meta charset="utf-8">
+<meta property="head" content="H1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 -->
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container-fluid'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>mdecourse - 2021 Fall 計算機程式 作業網站</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">mdecourse - 2021 Fall 計算機程式 作業網站</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li class='has-children'><a href='portable_hybrid.html'>portable_hybrid</a><ul class='dropdown'><li><a href='ANSI C.html'>ANSI C</a><li><a href='C-notes.html'>C-notes</a><li><a href='Pyslvs-UI.html'>Pyslvs-UI</a></li></ul><li><a href='GitExtensions.html'>GitExtensions</a><li><a href='run.html'>run</a><li><a href='runsrc.html'>runsrc</a><li><a href='Snake.html'>Snake</a><li><a href='SSH.html'>SSH</a><li class='has-children'><a href='Network.html'>Network</a><ul class='dropdown'><li><a href='Fossil Server.html'>Fossil Server</a></li></li></ul></ul><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li><a href='Token.html'>Token</a><li><a href='SSH push.html'>SSH push</a></li></ul><li class='has-children'><a href='HW2.html'>HW2</a><ul class='dropdown'><li><a href='Python.html'>Python</a><li><a href='run1.html'>run1</a><li><a href='run2.html'>run2</a><li><a href='run3.html'>run3</a><li><a href='Server.html'>Server</a></li></ul><li class='has-children'><a href='W10.html'>W10</a><ul class='dropdown'><li><a href='Examples.html'>Examples</a><li><a href='Snakey.html'>Snakey</a></li></ul><li class='has-children'><a href='HW3.html'>HW3</a><ul class='dropdown'><li class='has-children'><a href='Algorithms.html'>Algorithms</a><ul class='dropdown'><li><a href='Practice1.html'>Practice1</a><li><a href='Practice2.html'>Practice2</a><li><a href='Practice3.html'>Practice3</a></li></ul><li><a href='Path Finding.html'>Path Finding</a><li><a href='ML in Brython.html'>ML in Brython</a><li><a href='Math.html'>Math</a></li></ul><li><a href='Final Project.html'>Final Project</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">Server << <a href='Server.html'>Previous</a> <a href='Examples.html'>Next</a> >> Examples<br /><h1>W10</h1>
+<p>W10 之後, 開始執行 <span style="background-color: #ccffcc;">HW3</span> 與 <span style="background-color: #ccffcc;">Final Project</span>.</p>
+<p>從 cp2021 課程內容中可知計算機程式的課程目的:</p>
+<p style="padding-left: 30px;">鼓勵每一位同學都能及早<span style="background-color: #ffff99;">確定努力的目標</span>, 證明自己具備<span style="background-color: #ffff99;">獨立研究與解題能力</span>.</p>
+<p>由於 <span style="background-color: #ccffcc;">HW1</span> 的目的在提醒電腦程式的編寫牽涉鍵盤中英文打字, 因此學員必須自行練就 touch typing 的能力, 可正確無誤快速 keyin 所需的程式碼以及相關說明內容.</p>
+<p><span style="background-color: #ccffcc;">HW1</span> 的程式編寫內容是修改一個 Brython 動畫程式, 讓紅色方塊能在使用者視覺暫留時間內移動座標位置, 可在特定位置時改變移動方向. 完成程式修改後則要求將程式碼存入個人的 Gist 區域.</p>
+<p><span style="background-color: #ccffcc;">HW2</span> 則要求使用者建立在 Windows 10 64 位元操作系統中的 Python 可攜程式系統, 主要內容帶有 Python 3.9.5 與 Portablegit 2.31.1 版, 可以用來啟動近端採 Flask 編寫的 <a href="https://github.com/mdecourse/cp2021_hw">https://github.com/mdecourse/cp2021_hw</a> 課程動態網頁, 並用瀏覽器編輯後將動態網頁轉為只帶有 html, css 與 javascript 的靜態網頁後, 推送至 Github Pages 網站中伺服.</p>
+<p><span style="background-color: #ccffcc;">HW2</span> 除了建立可攜程式系統外, 也要求將 <span style="background-color: #ccffcc;">HW1</span> 中的 Gist 程式碼, 以 <a href="https://mde.tw/cp2021_hw/downloads/run.txt">run.txt</a> (<a href="https://mde.tw/cp2021_hw/content/runsrc.html">runsrc</a>) 的動態內容執行.</p>
+<p>至於從 <span style="background-color: #ccffcc;">HW2</span> 進展到 <span style="background-color: #ccffcc;">HW3</span> 網際 Brython 貪食蛇的編寫與修改, 需要:</p>
+<ol>
+<li>配合各種程式語法, 從<a href="https://mde.tw/cp2021/content/%E6%95%99%E7%A7%91%E6%9B%B8%E5%B0%8E%E8%AE%80.html">教科書導讀</a>中, 整理 Brython 與 CPython 的程式語法說明</li>
+<li>在個人課程網頁中, 整理 <a href="https://www.freecodecamp.org/news/want-to-learn-python-heres-our-free-4-hour-interactive-course/">4 小時 Python 互動課程</a>的內容.</li>
+<li>將線上課程中的 Python <a href="https://introcs.cs.princeton.edu/python/home/">程式範例</a>, 分門別類改寫為 Brython 程式, 並依照 <a href="https://mde.tw/cp2021_hw/content/Practice2.html">Practice2</a> 格式以按鈕導入執行.</li>
+<li>了解 <a href="https://gist.githubusercontent.com/mdecourse/fd325f7ff3fb71a9653bf156fe53d7dc/raw/158c74d1df8313c723d16c2b42fbd2c34a0c1de8/snake_pathfinding_ai_curses.py">Pathfinding Snake 程式</a>執行原理 (資料結構與演算法, <a href="https://interactive-pathfinding.netlify.app/">搜尋圖解</a>1, <a href="https://github.com/mdecourse/Visualization-of-popular-algorithms-in-Python">搜尋圖解</a>2), 將程式改為 Brython 格式後, 直接在 <a href="https://mde.tw/cp2021_hw/content/Practice2.html">Practice2</a> 的按鈕中執行.</li>
+</ol>
+<p><span style="background-color: #ccffcc;">HW3</span> Snake Game 的程式設計未來可以發展為 AI 程式競賽 (<a href="./../downloads/Snakes AI Competition 2020 and 2021 Report.pdf">Snakes AI Competition 2020 and 2021 Report.pdf</a>). (<a href="https://github.com/ahendy/snakexd.ai">參考1</a>, <a href="https://github.com/mdecourse/battle_snake">參考2</a>, <a href="https://github.com/smallsco/robosnake">參考3</a>, <a href="https://aws.amazon.com/blogs/machine-learning/building-an-ai-powered-battlesnake-with-reinforcement-learning-on-amazon-sagemaker/">參考4</a>)</p>
+<p>各學員完成上述各項內容後, 可以自選題目完成 <a href="https://mde.tw/cp2021_hw/content/Final%20Project.html">Final Project</a>.</p>
+<h4>References:</h4>
+<p style="padding-left: 30px;"><a href="https://github.com/mdecourse/snake-game">https://github.com/mdecourse/snake-game</a></p>
+<p style="padding-left: 30px;"><a href="https://kevinkparsons.com/snake-game.html">https://kevinkparsons.com/snake-game.html</a> (<a href="./../downloads/snake-game_excel.zip">snake_game in Excel</a>)</p>
+<p style="padding-left: 30px;"><a href="./../downloads/snake_curses_and_tk.zip">snake_curses_and_tk.zip</a></p>
+<br />Server << <a href='Server.html'>Previous</a> <a href='Examples.html'>Next</a> >> Examples</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

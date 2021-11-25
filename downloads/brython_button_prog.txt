@@ -1,0 +1,21 @@
+############ for snake 開始 ############
+
+# 設定與 gist URL 對應的變數
+snake_url = "https://gist.githubusercontent.com/mdecourse/fd325f7ff3fb71a9653bf156fe53d7dc/raw/1bd9880ddd3978cb2b9af9a23954f9f8c2588541/brython_snake.py"
+# 根據程式碼所在的 URL 從 gist 取得程式碼
+snake_src = open(snake_url).read()
+
+# 設計一個函式, 透過網頁的事件導向驅動方式, 
+# 以 button 點擊後將 gist 原始碼導入編輯區(可令其自動執行)
+def do_snake(ev):
+    # 將程式碼導入編輯區, Ace3 將決定放入的編輯區域
+    Ace3.editor.setValue(snake_src)
+    # 程式碼導入後, 滑鼠停在第一行
+    Ace3.editor.scrollToRow(0)
+    Ace3.editor.gotoLine(0)
+    # 取得程式碼後若帶有下一行表示希望即刻執行
+    Ace3.run()
+
+# id 為 "do_snake" 的按鈕點按時, 執行 do_snake 方法
+doc["do_snake"].bind('click', do_snake)
+############ for snake 結束 ############

@@ -1,0 +1,145 @@
+<h3>Practice1</h3>
+<p>這一頁將利用常用的 Python 程式語法解題:</p>
+<p>初學者程式:</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff99;">整數累加:</span> 例如從 1 累加到 10, 最簡單且直覺的解法, 就是直接將 1 加到 10, 然後印出結果.</p>
+<p style="padding-left: 30px;">但是若題目需要累加到較大數值 (例如: 100), 程式編寫過程將會浪費許多時間, 若能善用變數設定, 變數加法, for 重複迴圈, range() 函式 (<a href="https://home.gamer.com.tw/creationDetail.php?sn=4337438">運作說明</a>) 以及整數轉為字串的用法, 將程式改寫成: <button id="add1to100">1 add to 100</button>, 就可以省下許多時間.</p>
+<p>初學者程式:</p>
+<p style="padding-left: 30px;">第二個範例為<span style="background-color: #ffff99;">字串內容查驗</span>: 利用輸入表單, 要求使用者輸入至少8個字元字串, 必須包含大小寫英文字母, 數字以及特殊符號, <button id="check_input">查驗輸入字串</button> 程式碼導入後, 可按下 Run 後執行.</p>
+<p>進階程式: <a href="https://www.notion.so/lenchen/LeetCode-47d625b874894484af7c055b024b9817">LeetCode in Python</a> (<a href="https://ptthito.com/tech_job/m-1627032526-a-554/">來源</a>)</p>
+<!-- 導入 brython 程式庫 -->
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<!-- 啟動 Brython -->
+<script>// <![CDATA[
+window.onload=function(){
+brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
+}
+// ]]></script>
+<p><!-- 導入 FileSaver 與 filereader --></p>
+<p>
+<script type="text/javascript" src="/static/ace/FileSaver.min.js"></script>
+<script type="text/javascript" src="/static/ace/filereader.js"></script>
+</p>
+<p><!-- 導入 ace --></p>
+<p>
+<script type="text/javascript" src="/static/ace/ace.js"></script>
+<script type="text/javascript" src="/static/ace/ext-language_tools.js"></script>
+<script type="text/javascript" src="/static/ace/mode-python3.js"></script>
+<script type="text/javascript" src="/static/ace/snippets/python.js"></script>
+</p>
+<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["py_src"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
+<p>
+<script type="text/javascript">// <![CDATA[
+function doSave(storage_id, filename){
+    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
+    filename = document.getElementById(filename).value
+    saveAs(blob, filename+".py");
+}
+// ]]></script>
+</p>
+<p><!-- 印出版次與關鍵字程式 --></p>
+<p>
+<script type="text/python3">// <![CDATA[
+from browser import document as doc
+import ace
+# 清除畫布
+def clear_bd(ev):
+    bd = doc["brython_div"]
+    bd.clear()
+# Brython 3.3.4 內建的 container 名稱為  'container' 且 turtle 輸出為 svg 必須使用 div 訂定 id
+Ace = ace.Editor(editor_id="kw_editor", console_id="kw_console", container_id="kw__container", storage_id="kw_py_src" )
+# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
+def run():
+    # 利用 get 取下 src 變數值
+    try:
+        url = doc.query["src"]
+    except:
+        url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c3a6deaf717f8f2739a4b1392a5ab10936e9693a/from_1_add_to_10_1.py"
+    prog = open(url).read()
+
+    # 將程式載入編輯區
+    Ace.editor.setValue(prog)
+    Ace.editor.scrollToRow(0)
+    Ace.editor.gotoLine(0)
+    # 直接執行程式
+    #ns = {'__name__':'__main__'}
+    #exec(prog, ns)
+    # 按下 run 按鈕
+    Ace.run()
+
+# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
+doc['kw_run'].bind('click', Ace.run)
+doc['kw_show_console'].bind('click', Ace.show_console)
+doc['kw_clear_console'].bind('click', Ace.clear_console)
+doc['clear_bd'].bind('click', clear_bd)
+# 呼叫函式執行
+run()
+// ]]></script>
+</p>
+<p><!-- add 1 to 100 開始 -->
+<script type="text/python3">// <![CDATA[
+from browser import document as doc
+import ace
+# 利用 ace 中的 Editor 建立 Ace 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
+Ace = ace.Editor(editor_id="kw_editor", console_id="kw_console", container_id="kw__container", storage_id="kw_py_src" )
+
+add1to100_url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c48e37714f055c3a0027cbfef59e442a6ef659b9/from_1_add_to_100_1.py"
+
+# 從 gist 取得程式碼
+add_src = open(add1to100_url).read()
+def add(ev):
+    Ace.editor.setValue(add_src)
+    Ace.editor.scrollToRow(0)
+    Ace.editor.gotoLine(0)
+    Ace.run()
+# id 為 "add1to100" 的按鈕點按時, 執行 add 方法
+doc["add1to100"].bind('click', add)
+// ]]></script>
+</p>
+<p><!-- add 1 to 100 結束--></p>
+<p><!-- 判斷輸入字串是否aA1$, 且至少 8 個字元-開始 -->
+<script type="text/python3">// <![CDATA[
+from browser import document as doc
+import ace
+import time
+
+# 利用 ace 中的 Editor 建立 Ace 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
+Ace = ace.Editor(editor_id="kw_editor", console_id="kw_console", container_id="kw__container", storage_id="kw_py_src" )
+
+check_str_url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/56dc6a6b8eaa05b80994ac6f08ebc9326330be43/check_str_input_content_1.py"
+# 從 gist 取得程式碼
+check_src = open(check_str_url).read()
+
+def check_input(ev):
+    Ace.editor.setValue(check_src)
+    Ace.editor.scrollToRow(0)
+    Ace.editor.gotoLine(0)
+    #Ace.run()
+
+# id 為 "check_input" 的按鈕點按時, 執行 check_input 方法
+doc["check_input"].bind('click', check_input)
+// ]]></script>
+</p>
+<p><!-- 判斷輸入字串是否aA1$, 且至少 8 個字元-結束--></p>
+<p><!-- 用來顯示程式碼的 editor 區域 --></p>
+<div id="kw_editor" style="width: 600px; height: 300px;"></div>
+<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
+<p><!-- 存擋表單開始 --></p>
+<form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text">.py</label> <input onclick="doSave('kw_py_src', 'kw_filename');" type="submit" value="Save"></form>
+<p><!-- 存擋表單結束 --></p>
+<p></p>
+<p><!-- 執行與清除按鈕開始 --></p>
+<p><button id="kw_run">Run</button> <button id="kw_show_console">Output</button> <button id="kw_clear_console">清除輸出區</button><button id="clear_bd">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
+<p><!-- 執行與清除按鈕結束 --></p>
+<p></p>
+<p><!-- 程式執行 ouput 區 --></p>
+<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console"></textarea></div>
+<p><!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 --></p>
+<div id="brython_div"></div>
+<p><!-- 導入 gearUtils-0.9.js Cango 齒輪繪圖程式庫 -->
+<script src="https://mde.tw/cp2021/cmsimde/static/Cango-24v03-min.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/gearUtils-09.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/SVGpathUtils-6v03-min.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script>
+</p>
