@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li><a href='run1.html'>run1</a></li></ul><li class='has-children'><a href='HW2.html'>HW2</a><ul class='dropdown'><li><a href='run2.html'>run2</a></li></ul><li class='has-children'><a href='HW3.html'>HW3</a><ul class='dropdown'><li class='has-children'><a href='Algorithms.html'>Algorithms</a><ul class='dropdown'><li><a href='Practice1.html'>Practice1</a><li><a href='Practice2.html'>Practice2</a><li><a href='Practice3.html'>Practice3</a></li></ul><li><a href='Path Finding.html'>Path Finding</a><li><a href='ML in Brython.html'>ML in Brython</a><li><a href='Math.html'>Math</a></li></ul><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='w13.html'>w13</a></li></ul><li><a href='H3.html'>H3</a><li><a href='Final Project.html'>Final Project</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li><a href='run1.html'>run1</a></li></ul><li class='has-children'><a href='HW2.html'>HW2</a><ul class='dropdown'><li><a href='run2.html'>run2</a></li></ul><li class='has-children'><a href='HW3.html'>HW3</a><ul class='dropdown'><li class='has-children'><a href='Algorithms.html'>Algorithms</a><ul class='dropdown'><li><a href='Practice1.html'>Practice1</a><li><a href='Practice2.html'>Practice2</a><li><a href='Practice3.html'>Practice3</a></li></ul><li><a href='Path Finding.html'>Path Finding</a><li><a href='ML in Brython.html'>ML in Brython</a><li><a href='Math.html'>Math</a></li></ul><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='w13.html'>w13</a></li></ul><li class='has-children'><a href='Final Project.html'>Final Project</a><ul class='dropdown'><li><a href='h3.html'>h3</a></li>
                       </ul>
                 </nav>
               </div>
@@ -139,7 +139,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Exam << <a href='Exam.html'>Previous</a> <a href='H3.html'>Next</a> >> H3<br /><h1>w13</h1>
+    <div id="tipue_search_content">Exam << <a href='Exam.html'>Previous</a> <a href='Final Project.html'>Next</a> >> Final Project<br /><h1>w13</h1>
 <p><a href="./../downloads/w12demo.txt">w12demo.txt</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China#Construction_details">ROC 國旗規格</a>.</p>
 <p><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E6%97%97#%E8%A7%84%E6%A0%BC">PROC 國旗規格</a> - 可以根據此規格定義, 新增 <button id="procflas">PROC flag</button> 按鈕.</p>
@@ -200,8 +200,79 @@ function doSave(storage_id, filename){
 <p><!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 --></p>
 <!-- 這裡的畫布 id 為 brython_div -->
 <div id="brython_div"></div>
-<div></div>
-<br />Exam << <a href='Exam.html'>Previous</a> <a href='H3.html'>Next</a> >> H3</div>
+<p><!-- ######################  editor1 結束 ###################### --></p>
+<!-- 以下可以開始利用 editor1 的設定編寫對應 Brython 程式 -->
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd1(ev):
+    # 注意這裡清除的畫布 id 為 brython_div
+    bd = doc["brython_div"]
+    bd.clear()
+Ace1 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
+def run1():
+    # 利用 get 取下 src 變數值
+    try:
+        url = doc.query["src"]
+    except:
+        url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c3a6deaf717f8f2739a4b1392a5ab10936e9693a/from_1_add_to_10_1.py"
+    prog = open(url).read()
+
+    # 將程式載入編輯區
+    Ace1.editor.setValue(prog)
+    Ace1.editor.scrollToRow(0)
+    Ace1.editor.gotoLine(0)
+    # 直接執行程式
+    #ns = {'__name__':'__main__'}
+    #exec(prog, ns)
+    # 按下 run 按鈕
+    Ace1.run()
+
+# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
+doc['kw_run1'].bind('click', Ace1.run)
+doc['kw_show_console1'].bind('click', Ace1.show_console)
+doc['kw_clear_console1'].bind('click', Ace1.clear_console)
+doc['clear_bd1'].bind('click', clear_bd1)
+# 呼叫函式執行
+run1()
+</script>
+<!-- 以上為內建程式, 頁面可透過 ?src=gist_url 執行 -->
+<p><!-- add 1 to 100 開始 -->
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd1(ev):
+    bd = doc["brython_div1"]
+    bd.clear()
+
+# 利用 ace 中的 Editor 建立 Ace 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
+Ace2 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+
+class button2:
+    def __init__(self, url):
+        self.url = url
+
+    # 記得加入 event 輸入變數
+    def do(self,ev):
+        Ace2.editor.setValue(open(self.url).read())
+        Ace2.editor.scrollToRow(0)
+        Ace2.editor.gotoLine(0)
+        Ace2.run()
+
+random_url = "https://gist.githubusercontent.com/kolas911205/5a388cc3b65b377fec4ceec6e75ff859/raw/fe9946c272550ace3594e013274f8dffcf9fb68e/w13.py"
+random = button2(random_url)
+doc["random"].bind('click', random.do)
+random2_url = "https://gist.githubusercontent.com/kolas911205/d5e0361ab649052019e5fcbf5b2b125e/raw/aa8249f18fbccc8698773bfa2c13ca5367df5935/w13-2.py"
+random2 = button2(random2_url)
+doc["random2"].bind('click', random2.do)
+</script>
+</p>
+<br />Exam << <a href='Exam.html'>Previous</a> <a href='Final Project.html'>Next</a> >> Final Project</div>
         
     <!-- footer -->
       <div class="container">
